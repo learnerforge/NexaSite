@@ -7,7 +7,9 @@ const ThemeContext = createContext(undefined)
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('nexasite-theme')
-    return themes.includes(saved) ? saved : 'dark'
+    if (themes.includes(saved)) return saved
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    return prefersDark ? 'dark' : 'blue'
   })
 
   useEffect(() => {

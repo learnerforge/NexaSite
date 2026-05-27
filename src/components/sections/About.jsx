@@ -1,11 +1,29 @@
-export function About() {
-  const stats = [
-    { value: '50+', label: 'Projects Delivered' },
-    { value: '30+', label: 'Happy Clients' },
-    { value: '6+', label: 'Years Experience' },
-    { value: '15+', label: 'Team Members' },
-  ]
+import { useCountUp } from '@/hooks/useCountUp'
 
+const stats = [
+  { target: 50, suffix: '+', label: 'Projects Delivered' },
+  { target: 30, suffix: '+', label: 'Happy Clients' },
+  { target: 6, suffix: '+', label: 'Years Experience' },
+  { target: 15, suffix: '+', label: 'Team Members' },
+]
+
+function StatCard({ target, suffix, label }) {
+  const { count, ref } = useCountUp(target)
+
+  return (
+    <div
+      ref={ref}
+      className="rounded-xl border border-theme-border bg-theme-card p-6 text-center"
+    >
+      <div className="text-3xl font-bold text-theme-accent">
+        {count}{suffix}
+      </div>
+      <div className="mt-1 text-sm text-theme-muted">{label}</div>
+    </div>
+  )
+}
+
+export function About() {
   return (
     <section id="about" className="mx-auto max-w-6xl px-4 py-24 sm:py-32">
       <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -29,13 +47,7 @@ export function About() {
 
         <div className="grid grid-cols-2 gap-4" data-aos="fade-left" data-aos-delay="100">
           {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-theme-border bg-theme-card p-6 text-center"
-            >
-              <div className="text-3xl font-bold text-theme-accent">{stat.value}</div>
-              <div className="mt-1 text-sm text-theme-muted">{stat.label}</div>
-            </div>
+            <StatCard key={stat.label} {...stat} />
           ))}
         </div>
       </div>
