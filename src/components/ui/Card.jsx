@@ -4,7 +4,7 @@ export function Card({ icon: Icon, title, description, className, children }) {
   return (
     <div
       className={cn(
-        'rounded-xl border border-theme-border bg-theme-card p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-1',
+        'rounded-xl border border-theme-border bg-theme-card p-4 sm:p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-1',
         className,
       )}
     >

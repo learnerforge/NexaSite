@@ -16,11 +16,11 @@ export function Testimonials() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className="flex flex-col rounded-xl border border-theme-border bg-theme-card p-6"
+              className="flex flex-col rounded-xl border border-theme-border bg-theme-card p-4 sm:p-6"
               data-aos="fade-up"
               data-aos-delay={i * 80}
             >

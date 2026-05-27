@@ -37,7 +37,7 @@ export function Footer() {
                   <li key={link}>
                     <a
                       href="#services"
-                      className="text-sm text-theme-muted transition-colors hover:text-theme-text"
+                      className="block py-2 text-sm text-theme-muted transition-colors hover:text-theme-text"
                     >
                       {link}
                     </a>
@@ -58,9 +58,9 @@ export function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="rounded-lg p-2 text-theme-muted transition-colors hover:text-theme-text hover:bg-theme-bg"
+                className="rounded-lg p-3 text-theme-muted transition-colors hover:text-theme-text hover:bg-theme-bg"
               >
-                <Icon size={16} />
+                <Icon size={20} />
               </a>
             ))}
           </div>

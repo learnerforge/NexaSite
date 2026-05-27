@@ -21,13 +21,13 @@ export function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 border-b border-theme-border bg-theme-nav backdrop-blur-md">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+    <header className="fixed top-0 left-0 right-0 z-40 border-b border-theme-border bg-theme-nav backdrop-blur-md h-[72px]">
+      <nav className="mx-auto flex h-full max-w-6xl items-center justify-between px-5 lg:px-10">
         <a href="#hero" onClick={(e) => { e.preventDefault(); handleClick('#hero') }} className="font-heading text-xl font-bold tracking-tight">
           Nexa<span className="text-theme-accent">Site</span>
         </a>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => {
             const isActive = activeId === link.href.slice(1)
             return (
@@ -48,7 +48,7 @@ export function Navbar() {
           })}
           <button
             onClick={cycleTheme}
-            className="ml-2 rounded-lg p-2 text-theme-muted transition-colors hover:text-theme-text hover:bg-theme-card"
+            className="ml-2 rounded-lg p-3 text-theme-muted transition-colors hover:text-theme-text hover:bg-theme-card"
             aria-label={`Theme: ${theme}`}
           >
             <ThemeIcon size={18} />
@@ -58,14 +58,14 @@ export function Navbar() {
         <div className="flex items-center gap-2 md:hidden">
           <button
             onClick={cycleTheme}
-            className="rounded-lg p-2 text-theme-muted transition-colors hover:text-theme-text"
+            className="rounded-lg p-3 text-theme-muted transition-colors hover:text-theme-text"
             aria-label={`Theme: ${theme}`}
           >
             <ThemeIcon size={18} />
           </button>
           <button
             onClick={() => setOpen(!open)}
-            className="rounded-lg p-2 text-theme-text"
+            className="rounded-lg p-3 text-theme-text"
             aria-label="Toggle menu"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
@@ -88,7 +88,7 @@ export function Navbar() {
                 href={link.href}
                 onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
                 className={cn(
-                  'block rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                  'block rounded-lg px-3 py-3 text-sm font-medium transition-colors',
                   isActive
                     ? 'text-theme-accent font-semibold'
                     : 'text-theme-muted hover:text-theme-text hover:bg-theme-card',

@@ -38,7 +38,7 @@ export function Modal({ isOpen, onClose, children, className }) {
       >
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 rounded-full p-1.5 text-theme-muted transition-colors hover:text-theme-text hover:bg-theme-bg"
+          className="absolute top-3 right-3 z-10 rounded-full p-2.5 text-theme-muted transition-colors hover:text-theme-text hover:bg-theme-bg"
           aria-label="Close modal"
         >
           <X size={20} />

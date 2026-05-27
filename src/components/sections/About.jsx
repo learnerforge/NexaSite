@@ -13,7 +13,7 @@ function StatCard({ target, suffix, label }) {
   return (
     <div
       ref={ref}
-      className="rounded-xl border border-theme-border bg-theme-card p-6 text-center"
+      className="rounded-xl border border-theme-border bg-theme-card p-4 sm:p-6 text-center"
     >
       <div className="text-3xl font-bold text-theme-accent">
         {count}{suffix}
@@ -26,7 +26,7 @@ function StatCard({ target, suffix, label }) {
 export function About() {
   return (
     <section id="about" className="mx-auto max-w-6xl px-4 py-24 sm:py-32">
-      <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div className="grid items-center gap-12 md:grid-cols-2 lg:grid-cols-2">
         <div data-aos="fade-right">
           <span className="text-xs font-semibold uppercase tracking-widest text-theme-accent">
             About Us

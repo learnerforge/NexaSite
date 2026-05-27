@@ -29,7 +29,7 @@ export function Portfolio() {
             key={cat}
             onClick={() => setActive(cat)}
             className={cn(
-              'rounded-lg px-4 py-2 text-sm font-medium transition-colors',
+              'rounded-lg px-4 py-2.5 text-sm font-medium transition-colors',
               active === cat
                 ? 'bg-theme-accent text-white'
                 : 'text-theme-muted hover:text-theme-text hover:bg-theme-card',
@@ -52,7 +52,7 @@ export function Portfolio() {
             <img
               src={item.image}
               alt={item.title}
-              className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full object-cover transition-transform duration-300 group-hover:scale-105 aspect-video"
               loading="lazy"
             />
             <div className="p-4">
@@ -72,7 +72,7 @@ export function Portfolio() {
               alt={selected.title}
               className="w-full max-h-[55vh] rounded-t-xl object-cover"
             />
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <span className="text-xs font-semibold uppercase tracking-widest text-theme-accent">
                 {selected.category}
               </span>

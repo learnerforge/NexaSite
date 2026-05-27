@@ -45,6 +45,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -58,4 +63,33 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  section[id="hero"] {
+    min-height: auto;
+    padding-block: 2rem;
+  }
+  section[id="hero"] h1 {
+    font-size: clamp(28px, 6vw, 48px) !important;
+  }
+  section[id="hero"] .hero-buttons {
+    margin-top: 1rem;
+  }
+  section[id="hero"] > button:last-child {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
